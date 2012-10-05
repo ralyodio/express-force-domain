@@ -21,8 +21,12 @@ Usage
 
 Setup a middleware in app.js before all your other routes are defined, and pass the full url to the homepage as an argument: (including port if other than 80):
 
+	app.all('*', require('express-force-domain')('http://www.example.com') );
+
+or use config variable:
+
 	var cfg = require('./config');
-	app.all('*', require('./express-force-domain')(cfg.site_url) );
+	app.all('*', require('express-force-domain')(cfg.site_url) );
 
 Alternative:
 
@@ -32,17 +36,17 @@ Alternative:
 	app.all('*', force(site_url) );
 
 
-or you can pass the url for the homepage manually, (four examples):
+or you can pass the url for the homepage manually, (four examples, pick one):
 
-	app.all('*', require('./express-force-domain')('http://example.com') );
-	app.all('*', require('./express-force-domain')('http://example.com:8080') );
-	app.all('*', require('./express-force-domain')('http://www.example.com') );
-	app.all('*', require('./express-force-domain')('http://www.example.com:8080') );
+	app.all('*', require('express-force-domain')('http://example.com') );
+	app.all('*', require('express-force-domain')('http://example.com:8080') );
+	app.all('*', require('express-force-domain')('http://www.example.com') );
+	app.all('*', require('express-force-domain')('http://www.example.com:8080') );
 
 
-Parked domains, assuming example2.com points to the same ip as example.com, and you prefer your app live at http://www.example.com:
+For parked domains you want to redirect, this assumes example2.com points to the same ip as example.com, and you prefer your app live at http://www.example.com:
 
-	app.all('*', require('./express-force-domain')('http://www.example.com') );
+	app.all('*', require('express-force-domain')('http://www.example.com') );
 
 Requests for http://example2.com, http://www.example2.com, and http://example.com will all redirect to http://www.example.com.
 
