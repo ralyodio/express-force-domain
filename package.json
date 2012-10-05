@@ -1,0 +1,20 @@
+{
+  "name": "express-force-domain",
+  "version": "0.0.1",
+  "description": "Force express 3.x to use a specific domain. Good for adding or removing www. and handling parked domains that redirect to your main domain.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chovy/express-force-domain.git"
+  },
+  "keywords": [
+    "express",
+    "domains",
+    "redirect"
+  ],
+  "author": "chovy",
+  "license": "MIT"
+}
