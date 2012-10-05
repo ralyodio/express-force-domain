@@ -14,6 +14,7 @@ Installing
 
 --save will add the package to your package.json file automatically.
 
+See the package on npm: https://npmjs.org/package/express-force-domain
 
 Usage
 ----
