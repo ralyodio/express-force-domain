@@ -57,3 +57,7 @@ More info
 * http://expressjs.com/
 * http://npmjs.org/
 
+LICENSE
+----
+
+(The MIT License)
