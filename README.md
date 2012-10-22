@@ -50,7 +50,7 @@ For parked domains you want to redirect, this assumes example2.com points to the
 
 Requests for http://example2.com, http://www.example2.com, and http://example.com will all redirect to http://www.example.com.
 
-You can also use as middleware with app.use(): 
+You can also use as middleware with connect and app.use(), if you are not using express: 
 
 	app.use(require('express-force-domain')('http://www.example.com') );
 
