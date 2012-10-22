@@ -16,7 +16,7 @@ Installing
 
 See the package on npm: https://npmjs.org/package/express-force-domain
 
-Usage
+Usage with Express
 ----
 
 Setup a middleware in app.js before all your other routes are defined, and pass the full url to the homepage as an argument: (including port if other than 80):
@@ -49,6 +49,9 @@ For parked domains you want to redirect, this assumes example2.com points to the
 	app.all('*', require('express-force-domain')('http://www.example.com') );
 
 Requests for http://example2.com, http://www.example2.com, and http://example.com will all redirect to http://www.example.com.
+
+Usage with Connect
+----
 
 You can also use as middleware with connect and app.use(), if you are not using express: 
 

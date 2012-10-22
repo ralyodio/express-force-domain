@@ -1,6 +1,6 @@
 {
   "name": "express-force-domain",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Force express 3.x or Connect to use a specific domain. Good for adding or removing www. and handling parked domains that redirect to your main domain.",
   "main": "./lib/express-force-domain.js",
   "scripts": {
@@ -13,7 +13,9 @@
   "keywords": [
     "express",
     "domains",
-    "redirect"
+    "redirect",
+		"connect",
+		"seo"
   ],
   "author": "Anthony Ettinger (chovy)",
   "license": "MIT"
