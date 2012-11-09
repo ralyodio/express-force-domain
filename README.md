@@ -16,6 +16,18 @@ Installing
 
 See the package on npm: https://npmjs.org/package/express-force-domain
 
+Usage with Connect or Express
+----
+
+You can also use as middleware with connect and app.use(), if you are not using express: 
+
+	app.use(require('express-force-domain')('http://www.example.com') );
+
+or
+
+	var	force = require('express-force-domain');
+	app.use( force('http://www.example.com') );
+
 Usage with Express
 ----
 
@@ -49,18 +61,6 @@ For parked domains you want to redirect, this assumes example2.com points to the
 	app.all('*', require('express-force-domain')('http://www.example.com') );
 
 Requests for http://example2.com, http://www.example2.com, and http://example.com will all redirect to http://www.example.com.
-
-Usage with Connect
-----
-
-You can also use as middleware with connect and app.use(), if you are not using express: 
-
-	app.use(require('express-force-domain')('http://www.example.com') );
-
-or
-
-	var	force = require('express-force-domain');
-	app.use( force('http://www.example.com') );
 
 More info
 ----
