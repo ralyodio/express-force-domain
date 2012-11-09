@@ -23,7 +23,7 @@ You can also use as middleware with connect and app.use(), if you are not using 
 
 Setup a middleware in app.js before all your other routes are defined, and pass the full url to the homepage as an argument: (including port if other than 80):
 
-	app.use(require('express-force-domain')('http://www.example.com') );
+	app.use( require('express-force-domain')('http://www.example.com') );
 
 or
 
@@ -37,7 +37,7 @@ or alternative port
 Note, be sure to put the app.use statement above the app.router.
 
 	var cfg = require('./config')
-	,	force = require('express-force-domain');
+	, force = require('express-force-domain');
 
 	app.use( force(cfg.site_url) );
 	...
@@ -46,7 +46,7 @@ Note, be sure to put the app.use statement above the app.router.
 Alternative:
 
 	var site_url = 'http://www.example.com'
-	,	force = require('express-force-domain');
+	, force = require('express-force-domain');
 
 	app.use( force(site_url) );
 
