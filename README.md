@@ -57,6 +57,11 @@ You can also use as middleware with connect and app.use(), if you are not using 
 
 	app.use(require('express-force-domain')('http://www.example.com') );
 
+or
+
+	var	force = require('express-force-domain');
+	app.use( force('http://www.example.com') );
+
 More info
 ----
 
