@@ -14,8 +14,8 @@
     "express",
     "domains",
     "redirect",
-		"connect",
-		"seo"
+    "connect",
+    "seo"
   ],
   "author": "Anthony Ettinger (chovy)",
   "license": "MIT"
