@@ -99,6 +99,46 @@ describe('express-force-domain middleware', function() {
 
   });
 
+  it('can allow multiple hosts with the first as redirect target', function(done) {
+
+
+    app.use(forceDomain([
+      'a.example.com',
+      'b.example.com'
+    ]));
+    app.get('/', function(req, res) {
+      res.sendStatus(200);
+      res.end();
+    });
+
+    request('a.example.com', '/')
+    .then(function(res) {
+      expect(res).to.exist;
+      expect(res.statusCode).to.be.equal(200);
+
+      return request('b.example.com', '/');
+    }).then(function(res) {
+      expect(res).to.exist;
+      expect(res.statusCode).to.be.equal(200);
+
+      return request('c.example.com', '/');
+    }).then(function(res) {
+      expect(res).to.exist;
+      expect(res.statusCode).to.be.equal(301);
+
+      var body = '';
+      res.on('data', function(chunk) {
+        body += chunk;
+      });
+      res.on('end', function() {
+        expect(res.headers.location).to.be.equal('http://a.example.com/');
+        done();
+      });
+
+    })
+
+  });
+
 });
 
 function request(hostname, path, callback) {
